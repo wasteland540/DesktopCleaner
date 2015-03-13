@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModels="clr-namespace:DesktopCleaner.Application.ViewModels"
         xmlns:views="clr-namespace:DesktopCleaner.Application.Views"
-        Title="MainWindow" Height="153" Width="358">
+        Title="Desktop Cleaner" Height="153" Width="358">
     <Grid>
         <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="135" Height="48" Command="{Binding ConfigurationCommand}">
             <StackPanel Orientation="Horizontal">

@@ -38,6 +38,7 @@ namespace DesktopCleaner.Application.Services
 
                             doubleCounter++;
                             Settings.Default.DoubleFileExtension = doubleCounter;
+                            Settings.Default.Save();
                         }
 
                         var info = new FileInfo(file);

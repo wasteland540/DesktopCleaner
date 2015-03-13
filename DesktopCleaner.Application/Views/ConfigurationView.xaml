@@ -1,8 +1,17 @@
 ﻿<Window x:Class="DesktopCleaner.Application.Views.ConfigurationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ConfigurationView" Height="300" Width="300">
+        Title="Configuration" Height="300" Width="439">
     <Grid>
-        
+        <Label Content="Destination Path:
+               " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="{Binding DestinationPath}" VerticalAlignment="Top" Width="282" RenderTransformOrigin="0.742,0.522"/>
+        <Button Command="{Binding ChooseCommand}" HorizontalAlignment="Left" Margin="297,36,0,0" VerticalAlignment="Top" Width="102" Height="23">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Resources/BtnIcons/view.png"/>
+                <TextBlock Text="Choose..." />
+            </StackPanel>    
+        </Button>
+
     </Grid>
 </Window>
