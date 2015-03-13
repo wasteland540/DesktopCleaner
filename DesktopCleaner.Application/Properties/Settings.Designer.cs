@@ -34,5 +34,41 @@ namespace DesktopCleaner.Application.Properties {
                 this["DatabasePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstAppStart {
+            get {
+                return ((bool)(this["FirstAppStart"]));
+            }
+            set {
+                this["FirstAppStart"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:/DesktopCleaner/")]
+        public string DestinationPath {
+            get {
+                return ((string)(this["DestinationPath"]));
+            }
+            set {
+                this["DestinationPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1337")]
+        public int DoubleFileExtension {
+            get {
+                return ((int)(this["DoubleFileExtension"]));
+            }
+            set {
+                this["DoubleFileExtension"] = value;
+            }
+        }
     }
 }

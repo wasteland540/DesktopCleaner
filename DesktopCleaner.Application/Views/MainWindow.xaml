@@ -3,8 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModels="clr-namespace:DesktopCleaner.Application.ViewModels"
         xmlns:views="clr-namespace:DesktopCleaner.Application.Views"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="153" Width="358">
     <Grid>
-        
+        <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="135" Height="48" Command="{Binding ConfigurationCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="..\Resources\BtnIcons\gear_edit.png" HorizontalAlignment="Left"/>
+                <TextBlock Text="Configuration" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            </StackPanel>       
+        </Button>
+        <Image Source="..\Resources\BtnIcons\arrow_right_blue.png" HorizontalAlignment="Left" Height="48" Margin="150,10,0,0" VerticalAlignment="Top" Width="48" />
+        <Button HorizontalAlignment="Left" Margin="203,10,0,0" VerticalAlignment="Top" Width="135" Height="48" Command="{Binding SetupCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="..\Resources\BtnIcons\box_software.png"/>
+                <TextBlock Text="Setup" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="135" Height="48" Command="{Binding CleanCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="..\Resources\BtnIcons\clean48.png"/>
+                <TextBlock Text="Clean" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

@@ -5,5 +5,14 @@
     <Setting Name="DatabasePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:/test/DB4O/desktopcleaner/databaseProd.yap</Value>
     </Setting>
+    <Setting Name="FirstAppStart" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DestinationPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:/DesktopCleaner/</Value>
+    </Setting>
+    <Setting Name="DoubleFileExtension" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1337</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
