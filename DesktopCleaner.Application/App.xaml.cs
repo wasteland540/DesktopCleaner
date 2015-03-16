@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.IO;
+using System.Windows;
 using DesktopCleaner.Application.Properties;
 using DesktopCleaner.Application.Services;
 using DesktopCleaner.Application.Views;
@@ -55,15 +57,22 @@ namespace DesktopCleaner.Application
 
         private void TryToRegisterInAutostart()
         {
-            RegistryKey autostartKey = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-
-            if (autostartKey != null)
+            try
             {
-                var executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                autostartKey.SetValue("CAutoStart", executablePath);
-                autostartKey.Close();
+                RegistryKey autostartKey = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-                Settings.Default.FirstAppStart = false;
+                if (autostartKey != null)
+                {
+                    var executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                    autostartKey.SetValue("CAutoStart", executablePath);
+                    autostartKey.Close();
+
+                    Settings.Default.FirstAppStart = false;
+                }
+            }
+            catch (Exception e)
+            {
+                File.WriteAllText("C:/logs/log.txt", e.Message + "\n\n" + e.StackTrace);
             }
         }
     }

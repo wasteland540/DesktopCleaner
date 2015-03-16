@@ -226,7 +226,7 @@ namespace DesktopCleaner.Application.ViewModels
                     var blackFile = new BlackListedFile
                     {
                         FileName = _newFilename,
-                        FileExtension = _newExtension,
+                        FileExtension = "." + _newExtension,
                     };
 
                     _databaseService.AddBlacklistedFile(blackFile);

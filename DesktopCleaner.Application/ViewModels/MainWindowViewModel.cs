@@ -61,8 +61,6 @@ namespace DesktopCleaner.Application.ViewModels
 
         private void Clean(object obj)
         {
-            //TODO: blacklisted files/ dirs berücksichtigen!!!!!!!!
-
             string destionationPath = Settings.Default.DestinationPath;
 
             if (!Directory.Exists(destionationPath))
