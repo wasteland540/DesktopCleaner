@@ -114,4 +114,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfigurationViewModel_AddFile_File_added_to_Blacklist_" xml:space="preserve">
+    <value>File added to Blacklist.</value>
+  </data>
+  <data name="ConfigurationViewModel_AddFile_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="ConfigurationViewModel_AddFile_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ConfigurationViewModel_AddFile_File_not_added_to_Blacklist__Extension_cannot_be_empty_" xml:space="preserve">
+    <value>File not added to Blacklist. Extension cannot be empty!</value>
+  </data>
 </root>

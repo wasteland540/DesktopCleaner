@@ -29,9 +29,8 @@ namespace DesktopCleaner.Application
             Container.RegisterInstance(typeof (IDataAccessLayer), _dbContext);
 
             //service registrations
-            //Container.RegisterType<ICategoryService, CategoryService>();
-            //Container.RegisterType<IPaymentService, PaymentService>();
             Container.RegisterType<IFileSystemService, FileSystemService>();
+            Container.RegisterType<IDatabaseService, DatabaseService>();
 
             //registraions utils
             //only one instance from messenger can exists! (recipient problems..)

@@ -94,7 +94,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Services\FileSystemService.cs" />
+    <Compile Include="Services\IDatabaseService.cs" />
     <Compile Include="Services\IFileSystemService.cs" />
     <Compile Include="ViewModels\ConfigurationViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -124,6 +126,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
@@ -164,6 +167,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\BtnIcons\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BtnIcons\folder_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BtnIcons\add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BtnIcons\folder_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BtnIcons\delete2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
