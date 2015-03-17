@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopCleaner.DataAccessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopCleaner.Model", "DesktopCleaner.Model\DesktopCleaner.Model.csproj", "{9E3FC927-9787-412E-93CD-E7A2268CD5B6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DesktopCleaner.Setup", "DesktopCleaner.Setup\DesktopCleaner.Setup.vdproj", "{550E3938-13C8-445B-B182-8DA8E9DE0A7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{9E3FC927-9787-412E-93CD-E7A2268CD5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E3FC927-9787-412E-93CD-E7A2268CD5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E3FC927-9787-412E-93CD-E7A2268CD5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550E3938-13C8-445B-B182-8DA8E9DE0A7B}.Debug|Any CPU.ActiveCfg = Debug
+		{550E3938-13C8-445B-B182-8DA8E9DE0A7B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

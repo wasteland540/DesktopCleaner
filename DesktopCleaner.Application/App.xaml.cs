@@ -46,6 +46,8 @@ namespace DesktopCleaner.Application
             if (Settings.Default.FirstAppStart)
             {
                 Settings.Default.FirstAppStart = false;
+                Settings.Default.Save();
+
                 mainWindow.Show();
             }
             else
