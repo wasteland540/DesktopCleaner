@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DatabasePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:/test/DB4O/desktopcleaner/databaseProd.yap</Value>
+      <Value Profile="(Default)">databaseProd.yap</Value>
     </Setting>
     <Setting Name="FirstAppStart" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

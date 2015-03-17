@@ -69,7 +69,7 @@ namespace DesktopCleaner.Application.Services
             _logger.Info("send message");
             
             _messenger.Send(e.ChangeType == WatcherChangeTypes.Created
-                ? new DirectoryChangedMessage() {DelayClean = true}
+                ? new DirectoryChangedMessage {DelayClean = true}
                 : new DirectoryChangedMessage());
         }
     }

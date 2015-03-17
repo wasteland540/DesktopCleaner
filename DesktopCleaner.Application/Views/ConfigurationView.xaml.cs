@@ -7,7 +7,7 @@ namespace DesktopCleaner.Application.Views
     /// <summary>
     ///     Interaction logic for ConfigurationView.xaml
     /// </summary>
-    public partial class ConfigurationView : Window
+    public partial class ConfigurationView
     {
         public ConfigurationView()
         {

@@ -25,7 +25,7 @@ namespace DesktopCleaner.Application.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:/test/DB4O/desktopcleaner/databaseProd.yap")]
+        [global::System.Configuration.DefaultSettingValueAttribute("databaseProd.yap")]
         public string DatabasePath {
             get {
                 return ((string)(this["DatabasePath"]));

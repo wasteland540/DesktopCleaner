@@ -1,9 +1,7 @@
 ﻿<Window x:Class="DesktopCleaner.Application.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:viewModels="clr-namespace:DesktopCleaner.Application.ViewModels"
-        xmlns:views="clr-namespace:DesktopCleaner.Application.Views"
-        Title="Desktop Cleaner" Height="153" Width="358" ResizeMode="NoResize">
+        Title="Desktop Cleaner" Height="153" Width="358" ResizeMode="CanMinimize" Icon="/Resources\mainIcon.png">
     <Grid>
         <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="135" Height="48" Command="{Binding ConfigurationCommand}">
             <StackPanel Orientation="Horizontal">

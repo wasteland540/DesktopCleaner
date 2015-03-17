@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using DesktopCleaner.Application.Properties;
 using DesktopCleaner.Application.Services;
 using DesktopCleaner.Application.Views;
@@ -9,7 +7,6 @@ using DesktopCleaner.DataAccessLayer.Db4o;
 using GalaSoft.MvvmLight.Messaging;
 using log4net.Config;
 using Microsoft.Practices.Unity;
-using Microsoft.Win32;
 
 namespace DesktopCleaner.Application
 {
@@ -44,13 +41,18 @@ namespace DesktopCleaner.Application
             var messenger = new Messenger();
             Container.RegisterInstance(typeof (IMessenger), messenger);
 
+            var mainWindow = Container.Resolve<MainWindow>();
+
             if (Settings.Default.FirstAppStart)
             {
-                TryToRegisterInAutostart();
+                Settings.Default.FirstAppStart = false;
+                mainWindow.Show();
             }
-
-            var mainWindow = Container.Resolve<MainWindow>();
-            mainWindow.Show();
+            else
+            {
+                //start in system tray icon bar
+                mainWindow.Hide();
+            }
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -58,28 +60,6 @@ namespace DesktopCleaner.Application
             _dbContext.Close();
 
             base.OnExit(e);
-        }
-
-        private void TryToRegisterInAutostart()
-        {
-            //TODO: evtl auf setup methode verlagern. so kann ohne admin rechte direkt aus dem auto start gestartet werden?
-            try
-            {
-                RegistryKey autostartKey = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-
-                if (autostartKey != null)
-                {
-                    var executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                    autostartKey.SetValue("CAutoStart", executablePath);
-                    autostartKey.Close();
-
-                    Settings.Default.FirstAppStart = false;
-                }
-            }
-            catch (Exception)
-            {
-                
-            }
         }
     }
 }
