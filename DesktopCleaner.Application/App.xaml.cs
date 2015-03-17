@@ -7,6 +7,7 @@ using DesktopCleaner.Application.Views;
 using DesktopCleaner.DataAccessLayer;
 using DesktopCleaner.DataAccessLayer.Db4o;
 using GalaSoft.MvvmLight.Messaging;
+using log4net.Config;
 using Microsoft.Practices.Unity;
 using Microsoft.Win32;
 
@@ -17,11 +18,14 @@ namespace DesktopCleaner.Application
     /// </summary>
     public partial class App
     {
-        public IUnityContainer Container = new UnityContainer();
+        public IUnityContainer Container;
         private IDataAccessLayer _dbContext;
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            BasicConfigurator.Configure();
+            Container = new UnityContainer();
+
             string databaseName = Settings.Default.DatabasePath;
 
             _dbContext = new Db4OContext();
@@ -33,6 +37,7 @@ namespace DesktopCleaner.Application
             //service registrations
             Container.RegisterType<IFileSystemService, FileSystemService>();
             Container.RegisterType<IDatabaseService, DatabaseService>();
+            Container.RegisterType<IFileWatcherService, FileWatcherService>();
 
             //registraions utils
             //only one instance from messenger can exists! (recipient problems..)
@@ -57,6 +62,7 @@ namespace DesktopCleaner.Application
 
         private void TryToRegisterInAutostart()
         {
+            //TODO: evtl auf setup methode verlagern. so kann ohne admin rechte direkt aus dem auto start gestartet werden?
             try
             {
                 RegistryKey autostartKey = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true);
@@ -70,9 +76,9 @@ namespace DesktopCleaner.Application
                     Settings.Default.FirstAppStart = false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                File.WriteAllText("C:/logs/log.txt", e.Message + "\n\n" + e.StackTrace);
+                
             }
         }
     }
