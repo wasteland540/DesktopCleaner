@@ -9,7 +9,7 @@ namespace DesktopCleaner.Application.Services
 {
     public class FileSystemService : IFileSystemService
     {
-        private static readonly string DesktopDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        private static string _desktopDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         private static readonly BlackListedFile LnkBlackListedFile = new BlackListedFile
         {
@@ -23,11 +23,17 @@ namespace DesktopCleaner.Application.Services
         {
             _databaseService = databaseService;
         }
+        
+        //only for unit test
+        public void SetDesktopDirectory(string path)
+        {
+            _desktopDirectory = path;
+        }
 
         public void CopyFiles()
         {
             string destionationPath = Settings.Default.DestinationPath;
-            string[] files = Directory.GetFiles(DesktopDirectory);
+            string[] files = Directory.GetFiles(_desktopDirectory);
             
             foreach (string file in files)
             {
@@ -65,7 +71,7 @@ namespace DesktopCleaner.Application.Services
         public void CopyDirectories()
         {
             string destinationPath = Settings.Default.DestinationPath;
-            string[] directories = Directory.GetDirectories(DesktopDirectory);
+            string[] directories = Directory.GetDirectories(_desktopDirectory);
 
             foreach (string directory in directories)
             {

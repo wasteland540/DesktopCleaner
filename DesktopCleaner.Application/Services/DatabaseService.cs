@@ -9,11 +9,17 @@ namespace DesktopCleaner.Application.Services
     public class DatabaseService : IDatabaseService
     {
         private readonly IDataAccessLayer _context;
-        private readonly string _databaseName = Settings.Default.DatabasePath;
-
+        private string _databaseName = Settings.Default.DatabasePath;
+        
         public DatabaseService(IDataAccessLayer context)
         {
             _context = context;
+        }
+
+        //only for unit test
+        public void SetDatabaseName(string databaseName)
+        {
+            _databaseName = databaseName;
         }
 
         public List<BlackListedFile> GetBlackListedFiles()

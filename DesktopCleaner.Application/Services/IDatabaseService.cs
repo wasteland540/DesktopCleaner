@@ -5,6 +5,9 @@ namespace DesktopCleaner.Application.Services
 {
     public interface IDatabaseService
     {
+        //only for unit test
+        void SetDatabaseName(string databaseName);
+
         List<BlackListedFile> GetBlackListedFiles();
 
         List<BlackListedDirectory> GetBlackListedDirectories();
